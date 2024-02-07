@@ -7,7 +7,7 @@ function App() {
   const [count, setCount] = useState(0)
 console.log(count)
 
-//12345
+//123456
   return (
     <>
       <div>
