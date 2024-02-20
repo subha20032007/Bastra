@@ -25,7 +25,34 @@ export const DeleteProductSuccessAction=(payload)=>{
     return {type:PRODUCT_REQUEST,payload}
 }
 
-export const getProduct=()=>{
-
-    axios
+export const getProduct=(dispatch)=>{
+  ProductRequestAction()
+    axios.get(`http://localhost:3001/products`)
+    .then((res)=>{
+        dispatch(GetProductSuccessAction(res.data))
+    }).catch((err)=>{
+        console.log(err)
+        dispatch(ProductFailreAction())
+    })
 }
+export const addProduct=(payload)=>(dispatch)=>{
+    ProductRequestAction()
+      axios.post(`http://localhost:3001/products`,payload)
+      .then((res)=>{
+          dispatch(PostProductSuccessAction(res.data))
+      }).catch((err)=>{
+          console.log(err)
+          dispatch(ProductFailreAction())
+      })
+  }
+  export const deleteProduct=(payload)=>(dispatch)=>{
+    ProductRequestAction()
+      axios.delete(`http://localhost:3001/products`,payload)
+      .then((res)=>{
+          dispatch(DeleteProductSuccessAction(payload))
+          dispatch(GetProductSuccessAction(res.data))
+      }).catch((err)=>{
+          console.log(err)
+          dispatch(ProductFailreAction())
+      })
+  }
