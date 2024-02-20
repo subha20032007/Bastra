@@ -1,4 +1,4 @@
-import { ADD_TO_CART, GET_PRODUCT_REQUEST, GET_PRODUCT_SUCCESS } from "./actionType";
+import {  DELETE_PRODUCT_SUCCESS, GET_PRODUCT_SUCCESS, POST_PRODUCT_SUCCESS, PRODUCT_FAILURE, PRODUCT_REQUEST } from "./actionType";
 
 const inititalState={
     isLoad:false,
@@ -7,12 +7,16 @@ const inititalState={
 }
 const reducer=(state=inititalState,{type,payload})=>{
     switch(type){
-        case GET_PRODUCT_REQUEST:
+        case PRODUCT_REQUEST:
             return {...state,isLoad:true}
         case GET_PRODUCT_SUCCESS:
             return {...state,isLoad:false,products:[payload]}
-        case GET_PRODUCT_SUCCESS:
+        case PRODUCT_FAILURE:
             return {...state,isLoad:false,isErr:true}
+        case POST_PRODUCT_SUCCESS:
+            return {...state,isLoad:false,products:[...state.products,payload]}
+         case DELETE_PRODUCT_SUCCESS:
+            return {...state,isLoad:false,products:state.products.filter((el)=>el.id!==payload)}               
         default:
             return state;
     }
