@@ -15,7 +15,7 @@ export const GetProductSuccessAction=(payload)=>{
 }
 
 export const ProductFailreAction=()=>{
-    return {type:PRODUCT_REQUEST}
+    return {type:PRODUCT_FAILURE}
 }
 export const PostProductSuccessAction=(payload)=>{
     return {type:PRODUCT_REQUEST,payload}
