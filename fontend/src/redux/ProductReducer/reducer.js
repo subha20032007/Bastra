@@ -1,4 +1,4 @@
-import { ADD_TO_CART, GET_PRODUCT_REQUEST } from "./actionType";
+import { ADD_TO_CART, GET_PRODUCT_REQUEST, GET_PRODUCT_SUCCESS } from "./actionType";
 
 const inititalState={
     isLoad:false,
@@ -9,6 +9,8 @@ const reducer=(state=inititalState,{type,payload})=>{
     switch(type){
         case GET_PRODUCT_REQUEST:
             return {...state,isLoad:true}
+        case GET_PRODUCT_SUCCESS:
+            return {...state,isLoad:false,products:[payload]}
         default:
             return state;
     }
