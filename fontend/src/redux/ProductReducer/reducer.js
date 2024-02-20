@@ -11,6 +11,8 @@ const reducer=(state=inititalState,{type,payload})=>{
             return {...state,isLoad:true}
         case GET_PRODUCT_SUCCESS:
             return {...state,isLoad:false,products:[payload]}
+        case GET_PRODUCT_SUCCESS:
+            return {...state,isLoad:false,isErr:true}
         default:
             return state;
     }
