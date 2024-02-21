@@ -24,7 +24,7 @@ export const Login = () => {
 //   //console.log(location.pathname)
 //   navigate(location.pathname)
 //  }
-//12
+//123
   return (
     <DIV>
         <h1>LOG IN</h1>
