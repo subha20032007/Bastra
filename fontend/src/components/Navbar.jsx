@@ -10,8 +10,8 @@ export const Navbar = () => {
   return (
     <DIV>
        {
-        Links.map((el)=>(
-            <Link to={el.path}>{el.el}</Link>
+        Links.map((el,i)=>(
+            <Link key={i} to={el.path}>{el.el}</Link>
         ))
        }
     </DIV>

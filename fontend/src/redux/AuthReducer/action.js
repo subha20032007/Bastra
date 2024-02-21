@@ -3,6 +3,7 @@
 // const LOGIN_SUCCESS="LOGIN_SUCCESS"
 
 import axios from "axios"
+import { LOGIN_FAILURE, LOGIN_REQUEST, LOGIN_SUCCESS } from "./actionType"
 
 export const LoginRequestAction=()=>{
     return {type:LOGIN_REQUEST}
@@ -13,12 +14,13 @@ export const LoginSuccessAction=(payload)=>{
 export const LoginFailureAction=()=>{
     return {type:LOGIN_FAILURE}
 }
-export const Login=(payload)=>(dispatch)=>{
+export const LoginUser=(payload)=>(dispatch)=>{
+    console.log(payload)
     dispatch(LoginRequestAction())
     axios.post(`https://reqres.in/api/login`,payload)
     .then((res)=>{
        console.log(res.data.token)
-       dispatch(LoginSuccessAction(req.data.token))
+       dispatch(LoginSuccessAction(res.data.token))
     }).catch((err)=>{
         console.log(err)
         dispatch(LoginFailureAction())
