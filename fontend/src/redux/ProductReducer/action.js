@@ -4,31 +4,35 @@
 // export const POST_PRODUCT_SUCCESS="POST_PRODUCT_SUCCESS"
 // export const DELETE_PRODUCT_SUCCESS="DELETE_PRODUCT_SUCCESS"
 
-import { PRODUCT_FAILURE, PRODUCT_REQUEST } from "./actionType"
+import { DELETE_PRODUCT_SUCCESS, EDIT_PRODUCT_SUCCESS, GET_PRODUCT_SUCCESS, POST_PRODUCT_SUCCESS, PRODUCT_FAILURE, PRODUCT_REQUEST } from "./actionType"
 import axios from "axios"
 export const ProductRequestAction=()=>{
     return {type:PRODUCT_REQUEST}
 }
 
 export const GetProductSuccessAction=(payload)=>{
-    return {type:PRODUCT_REQUEST,payload}
+    //console.log({payload})
+    return {type:GET_PRODUCT_SUCCESS,payload}
 }
 
 export const ProductFailreAction=()=>{
     return {type:PRODUCT_FAILURE}
 }
 export const PostProductSuccessAction=(payload)=>{
-    return {type:PRODUCT_REQUEST,payload}
+    return {type:POST_PRODUCT_SUCCESS,payload}
 }
-
+export const EditProductSuccessAction=(id,data)=>{
+    return {type:EDIT_PRODUCT_SUCCESS,payload:{id,data}}
+}
 export const DeleteProductSuccessAction=(payload)=>{
-    return {type:PRODUCT_REQUEST,payload}
+    return {type:DELETE_PRODUCT_SUCCESS,payload}
 }
 
 export const getProduct=(dispatch)=>{
-  ProductRequestAction()
+    dispatch(ProductRequestAction())
     axios.get(`http://localhost:3001/products`)
     .then((res)=>{
+       // console.log(res.data)
         dispatch(GetProductSuccessAction(res.data))
     }).catch((err)=>{
         console.log(err)
@@ -36,7 +40,7 @@ export const getProduct=(dispatch)=>{
     })
 }
 export const addProduct=(payload)=>(dispatch)=>{
-    ProductRequestAction()
+    dispatch(ProductRequestAction())
       axios.post(`http://localhost:3001/products`,payload)
       .then((res)=>{
           dispatch(PostProductSuccessAction(res.data))
@@ -46,11 +50,22 @@ export const addProduct=(payload)=>(dispatch)=>{
       })
   }
   export const deleteProduct=(payload)=>(dispatch)=>{
-    ProductRequestAction()
-      axios.delete(`http://localhost:3001/products`,payload)
+    dispatch(ProductRequestAction())
+      axios.delete(`http://localhost:3001/products/${payload}`)
       .then((res)=>{
           dispatch(DeleteProductSuccessAction(payload))
-          dispatch(GetProductSuccessAction(res.data))
+      }).catch((err)=>{
+          console.log(err)
+          dispatch(ProductFailreAction())
+      })
+  }
+  export const editProduct=(payload,id)=>(dispatch)=>{
+
+    dispatch(ProductRequestAction())
+      return axios.patch(`http://localhost:3001/products/${id}`,payload)
+      .then((res)=>{
+         dispatch(EditProductSuccessAction(id,payload))
+        
       }).catch((err)=>{
           console.log(err)
           dispatch(ProductFailreAction())

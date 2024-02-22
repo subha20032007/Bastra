@@ -5,6 +5,8 @@ const Links=[
     {path:"/",el:"Home"},
     {path:"/login",el:"Login"},
     {path:"/register",el:"Register"},
+    {path:"/addproduct",el:"Add Product"},
+    {path:"/admin",el:"Admin"}
 ]
 export const Navbar = () => {
   return (

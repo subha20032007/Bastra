@@ -4,7 +4,7 @@ import { LoginUser } from '../redux/AuthReducer/action'
 import styled from "styled-components"
 import { useLocation, useNavigate } from 'react-router-dom'
 export const Login = () => {
-  const [email,setEmail]=useState("")
+  const [email,setEmail]=useState("eve.holt@reqres.in")
   const [password,setPassword]=useState("")
   const dispatch=useDispatch()
   const location=useLocation()
@@ -15,7 +15,7 @@ export const Login = () => {
       email,password
     }
        dispatch(LoginUser(payload))
-       setEmail("")
+       setEmail("eve.holt@reqres.in")
        setPassword("")
        
   }
@@ -28,8 +28,7 @@ export const Login = () => {
   return (
     <DIV>
         <h1>LOG IN</h1>
-        <p> "email": "eve.holt@reqres.in",
-    "password": "cityslicka"</p>
+       { isAuth?<p>Login Successfull!!</p>:""}
    <input type="text" value={email} onChange={(e)=>{setEmail(e.target.value)}} placeholder='Enter Your Email'/>
    <input type="text" value={password} onChange={(e)=>{setPassword(e.target.value)}} placeholder='Enter Your Email' />
    <button onClick={handelLogin}>Login</button>
@@ -59,5 +58,8 @@ button{
 }
 h1{
   color: #c70396;
+}
+p{
+  color:#00d848
 }
 `
