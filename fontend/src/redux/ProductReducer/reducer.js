@@ -6,7 +6,7 @@ const inititalState={
     products:[]
 }
 export const reducer=(state=inititalState,{type,payload})=>{
-    console.log(type,payload)
+   // console.log(type,payload)
     switch(type){
         case PRODUCT_REQUEST:
             return {...state,isLoad:true}

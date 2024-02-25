@@ -28,11 +28,12 @@ export const DeleteProductSuccessAction=(payload)=>{
     return {type:DELETE_PRODUCT_SUCCESS,payload}
 }
 
-export const getProduct=(dispatch)=>{
+export const getProduct=(paramObj)=>(dispatch)=>{
     dispatch(ProductRequestAction())
-    axios.get(`http://localhost:3001/products`)
+    console.log(paramObj)
+    axios.get(`http://localhost:3001/products`,paramObj)
     .then((res)=>{
-       // console.log(res.data)
+       // console.log(res.data,"***")
         dispatch(GetProductSuccessAction(res.data))
     }).catch((err)=>{
         console.log(err)

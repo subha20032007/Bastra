@@ -6,7 +6,7 @@ import { useSelector } from 'react-redux'
 
 function App() {
   const store=useSelector((store)=>store.productReducer)
-  console.log(store)
+  //console.log(store)
   return (
     <>
 <Navbar/>

@@ -9,8 +9,9 @@ export const AdminProductCard = ({product,handelDelete}) => {
     <DIV>
         <div className='card_img'> <img src={product.image} alt={product.title}/></div>
         <h3>{product.title}</h3>
-        <p>{product.brand}</p>
-        <p>{product.price}</p>
+        <p>brand:{product.brand}</p>
+        <p>price:{product.price}</p>
+        <p>gender:{product.gender}</p>
         <button onClick={()=>{handelDelete(product.id)}} >Delete</button>
         <Link to={`/editproduct/${product.id}`}><button >Edit</button></Link>
     </DIV>

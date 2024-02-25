@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useSearchParams } from 'react-router-dom'
 import styled from 'styled-components'
 
@@ -16,6 +16,12 @@ export const Sidebar = () => {
    setCategory(allCategory)
    console.log(category)
   }
+  useEffect(()=>{
+    const params={
+        category
+    }
+  setSearchParams(params)
+  },[category])
   return (
     <DIV>
         <div>
