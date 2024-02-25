@@ -40,7 +40,7 @@ export const getProduct=(paramObj)=>(dispatch)=>{
         dispatch(ProductFailreAction())
     })
 }
-//123
+//1234
 export const addProduct=(payload)=>(dispatch)=>{
     dispatch(ProductRequestAction())
       axios.post(`http://localhost:3001/products`,payload)
