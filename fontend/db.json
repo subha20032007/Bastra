@@ -11,30 +11,30 @@
     },
     {
       "id": "67e2",
-      "title": "realme 9 pro",
+      "title": "realme 20 pro ",
       "image": "https://placehold.co/60x40",
       "brand": "realme",
       "price": "12999",
-      "discount": "23",
+      "discount": "2",
       "gender": "women"
     },
     {
-      "id": "7cb5",
-      "title": "infinix 9",
-      "image": "https://placehold.co/600x400",
-      "brand": "infinix",
-      "price": "7998",
-      "discount": "6",
-      "gender": "kids"
+      "id": "a3f5",
+      "title": "Mi",
+      "image": "https://placehold.co/60x40",
+      "brand": "Mi",
+      "price": "43333",
+      "discount": "423",
+      "gender": "men"
     },
     {
-      "id": "bf5e",
-      "title": "vivo v9 pro",
+      "id": "a975",
+      "title": "Hmt",
       "image": "https://placehold.co/60x40",
-      "brand": "infinix",
-      "price": "6777",
-      "discount": "76",
-      "gender": "men"
+      "brand": "Hmt",
+      "price": "323",
+      "discount": "32",
+      "gender": "kids"
     }
   ],
   "cart": []

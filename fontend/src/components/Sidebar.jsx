@@ -17,8 +17,9 @@ export const Sidebar = () => {
    console.log(category)
   }
   useEffect(()=>{
-    const params={
+    let params={
         category
+        ,
     }
   setSearchParams(params)
   },[category])

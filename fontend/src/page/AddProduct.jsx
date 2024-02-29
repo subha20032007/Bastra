@@ -65,6 +65,10 @@ button{
   color:white;
   border:0px
 }
+select{
+  height:30px;
+
+}
 h1{
   color: #c70396;
 }
