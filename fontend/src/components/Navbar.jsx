@@ -5,13 +5,15 @@ const Links=[
     {path:"/",el:"Home"},
     {path:"/login",el:"Login"},
     {path:"/register",el:"Register"},
+    {path:"/addproduct",el:"Add Product"},
+    {path:"/admin",el:"Admin"}
 ]
 export const Navbar = () => {
   return (
     <DIV>
        {
-        Links.map((el)=>(
-            <Link to={el.path}>{el.el}</Link>
+        Links.map((el,i)=>(
+            <Link key={i} to={el.path}>{el.el}</Link>
         ))
        }
     </DIV>

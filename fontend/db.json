@@ -1,0 +1,41 @@
+{
+  "products": [
+    {
+      "id": "9c34",
+      "title": "redmi note 9 pro max",
+      "image": "https://placehold.co/60x40",
+      "brand": "redmi ",
+      "price": "17999",
+      "discount": "12",
+      "gender": "men"
+    },
+    {
+      "id": "67e2",
+      "title": "realme 20 pro ",
+      "image": "https://placehold.co/60x40",
+      "brand": "realme",
+      "price": "12999",
+      "discount": "2",
+      "gender": "women"
+    },
+    {
+      "id": "a3f5",
+      "title": "Mi",
+      "image": "https://placehold.co/60x40",
+      "brand": "Mi",
+      "price": "43333",
+      "discount": "423",
+      "gender": "men"
+    },
+    {
+      "id": "a975",
+      "title": "Hmt",
+      "image": "https://placehold.co/60x40",
+      "brand": "Hmt",
+      "price": "323",
+      "discount": "32",
+      "gender": "kids"
+    }
+  ],
+  "cart": []
+}
