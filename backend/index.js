@@ -1,7 +1,9 @@
 const express=require("express")
 const app=express()
-require('dotenv').config()
-const Port=9090
+const  dotenv=require('dotenv')
+dotenv.config()
+const Port=process.env.PORT||9090
+
 app.get('/',(req,res)=>{
     res.send('WelCome to backend')
 })
