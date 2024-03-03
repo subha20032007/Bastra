@@ -1,12 +1,18 @@
 const express=require("express")
-const dotenv=require("dotenv")
 const app=express()
+const  dotenv=require('dotenv')
 dotenv.config()
+const Port=process.env.PORT||9090
+
 app.get('/',(req,res)=>{
     res.send('WelCome to backend')
 })
 
-app.listen(process.env.PORT,()=>{
-    console.log(`Port Run On ${process.env.PORT}`)
+app.listen(Port,()=>{
+    try{
+    console.log(`Port Run On ${Port}`)
+   
+     } catch(err){
+        console.log(err)
+    }
 })
-//12345678
