@@ -31,4 +31,4 @@ const userModel=mongoose.model("user",userSchema)
 module.exports={
     userModel
 }
-//array,stack
+//array,stack,linked list
