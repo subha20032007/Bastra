@@ -31,4 +31,4 @@ const userModel=mongoose.model("user",userSchema)
 module.exports={
     userModel
 }
-//git add twet 
+//array
