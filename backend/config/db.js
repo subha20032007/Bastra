@@ -1,7 +1,14 @@
 const mongoose=require("mongoose")
-
-const connection=mongoose.connect('mongodb://127.0.0.1:27017/user')
-
+const dotenv=require("dotenv")
+dotenv.config()
+const connection=async()=>{
+    try{
+       const con=await mongoose.connect(process.env.Url)
+       console.log(`Mongodb Connected to ${con.connection.host}`)
+    }catch(err){
+        console.log(`err in mongodb ${err}`)
+    }
+}
 module.exports={
     connection
 }
